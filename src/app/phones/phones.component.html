@@ -1,0 +1,17 @@
+<div class="flex flex-row flex-wrap space-x-1.5">
+  <app-phone
+    (selectedPhone)="addNewSelectedPhone($event)"
+    *ngFor="
+      let phone of phoneArr | paginate: { itemsPerPage: 4, currentPage: p }
+    "
+    [phone]="phone"
+  ></app-phone>
+</div>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+<app-selected-list [phoneArr]="selectedArr"></app-selected-list>
+<button
+  (click)="deleteAllSelectedItems()"
+  class="bg-red-500 hover:bg-red-700 text-white font-bold w-1/4 rounded-full"
+>
+  UnselectAll
+</button>

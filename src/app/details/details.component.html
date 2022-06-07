@@ -1,0 +1,23 @@
+<div class="flex flex-col w-full space-y-4 bg-slate-500">
+  <div class="flex justify-center">
+    <img class="object-cover w-32 h-32" src="{{ Phone.image }}" alt="" />
+  </div>
+
+  <p class="flex justify-center text-sm">
+    {{ Phone.description }}
+  </p>
+
+  <div class="flex flex-col">
+    <div class="flex justify-center">{{ Phone.status }}</div>
+    <div class="flex justify-center">{{ Phone.price }}</div>
+  </div>
+  <div class="flex flex-row justify-center space-x-4">
+    
+    <button
+      (click)="onClickBack()"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-fit rounded-full"
+    >
+      Back
+    </button>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div [ngClass]="{'border-2 border-rose-500':phone.selected} " class="flex flex-col w-full space-y-4 bg-slate-500">
+  <div class="flex justify-center">
+    <img
+      class="object-cover w-32 h-32"
+      src={{phone.image}}
+      alt=""
+    />
+  </div>
+
+  <p class="flex justify-center text-sm">
+    {{phone.name}}
+  </p>
+
+  <div class="flex flex-row justify-center space-x-4">
+    <button (click)="onClickPreview()"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-fit rounded-full"
+    >
+      Preview
+    </button>
+    <button
+      (click)="onClickDetails()"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-fit rounded-full"
+    >
+      Details
+    </button>
+  </div>
+
+  <div *ngIf="toggleIndicator" class="flex flex-col">
+    <div class="flex justify-center">{{phone.id}}</div>
+    <div class="flex justify-center">{{phone.price}}</div>
+    <div class="flex justify-center">
+      <button (click)="onClickSelected()"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-1/4 rounded-full"
+      >
+        select
+      </button>
+    </div>
+  </div>
+</div>
